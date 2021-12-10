@@ -50,23 +50,7 @@
 //   });
 
 
-var createTask = function(taskText) {
-    // create elements that make up a task item
-    var taskLi = $("<li>").addClass("list-group-item");
-    var taskSpan = $("<span>")
-      .addClass("badge badge-primary badge-pill")
-      .text(taskDate);
-    var taskP = $("<p>")
-      .addClass("m-1")
-      .text(taskText);
-  
-    // append span and p element to parent li
-    taskLi.append(taskSpan, taskP);
-  
-  
-    // append to ul list on the page
-    $("#list-" + taskList).append(taskLi);
-  };
+
 
   // if function to filter date
 
@@ -77,3 +61,14 @@ var createTask = function(taskText) {
 //     else {
 //         class = gray
 //     }
+
+
+// notes 
+
+// select p element with class of date and add current date to be dispalyed.
+
+// select all time slots and make them editable in <textarea> part
+
+// select each time slot run through for loop to change color based ont ime
+
+//
