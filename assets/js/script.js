@@ -8,14 +8,9 @@ $("#currentDay").ready(function () {
   currentDay.innerHTML = currentDate;
 
 });
-// set times for non military time
+// set times will default to military time
 var currentTime = moment().format("HH");
-if (currentTime > 12) {
-  currentTime = currentTime - 12;
-}
-else {
-  currentTime = currentTime
-}
+
 // select each time slot run through if statment to change color based on time
 $(".timePm").each(function () {
   var classTime = $(this).attr("id").split("-")[1];
@@ -30,22 +25,6 @@ $(".timePm").each(function () {
   }
 });
 
-$(".timeAm").each(function () {
-  var classTime = $(this).attr("id").split("-")[1];
-  console.log(classTime)
-  if (currentTime == classTime) {
-    $(this).addClass("present");
-  } else if (currentTime > 8 && currentTime < classTime) {
-    $(this).removeClass("present");
-    $(this).addClass("future");
-  } else if (currentTime > 8 && currentTime > classTime) {
-    $(this).removeClass("future");
-    $(this).addClass("past");
-  } else if (currentTime < 9 ) {
-    $(this).removeClass("future");
-    $(this).addClass("past");
-  }
-});
 // select all each slot next to time and make the <textarea> data save
 
 $(".save").click(function (event) {
