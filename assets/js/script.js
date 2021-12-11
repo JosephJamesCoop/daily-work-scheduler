@@ -35,14 +35,13 @@ $(".timeAm").each(function () {
   console.log(classTime)
   if (currentTime == classTime) {
     $(this).addClass("present");
-  } else if (currentTime > 6 && currentTime < classTime) {
+  } else if (currentTime > 8 && currentTime < classTime) {
     $(this).removeClass("present");
     $(this).addClass("future");
-    console.log(this);
-  } else if (currentTime > 6 && currentTime > classTime) {
+  } else if (currentTime > 8 && currentTime > classTime) {
     $(this).removeClass("future");
     $(this).addClass("past");
-  } else if (currentTime < 6) {
+  } else if (currentTime < 9 ) {
     $(this).removeClass("future");
     $(this).addClass("past");
   }
@@ -61,26 +60,25 @@ $(".save").click(function (event) {
 // load up tasks function
 var loadTask = function() {
   var nine = localStorage.getItem("09");
-  $("#time-9 .taskItems").val(nine);
+  console.log(nine)
+  $("#box-9 .taskItems").val(nine);
   var ten = localStorage.getItem("010");
-  $("#time-10 .taskItems").val(ten);
+  $("#box-10 .taskItems").val(ten);
   var eleven = localStorage.getItem("011");
-  $("#time-11 .taskItems").val(eleven);
+  $("#box-11 .taskItems").val(eleven);
   var twelve = localStorage.getItem("012");
-  $("#time-12 .taskItems").val(twelve);
+  $("#box-12 .taskItems").val(twelve);
   var one = localStorage.getItem("01");
-  $("#time-1 .taskItems").val(one);
+  $("#box-1 .taskItems").val(one);
   var two = localStorage.getItem("02");
-  $("#time-2 .taskItems").val(two);
+  $("#box-2 .taskItems").val(two);
   var three = localStorage.getItem("03");
-  $("#time-3 .taskItems").val(three);
+  $("#box-3 .taskItems").val(three);
   var four = localStorage.getItem("04");
-  $("#time-4 .taskItems").val(four);
+  $("#box-4 .taskItems").val(four);
   var five = localStorage.getItem("05");
-  $("#time-5 .taskItems").val(five);
+  $("#box-5 .taskItems").val(five);
 };
 
 loadTask();
-
-
 
